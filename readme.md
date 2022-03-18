@@ -1,4 +1,4 @@
-This file is created for MM804 assignment-3.
+This file is created for MM804 project.
 
 # Accredit
 The code is written based on XXX.
@@ -7,8 +7,8 @@ The code is written based on XXX.
 All commands list here are sample commands. And this is based on Windows. To run the code on other OS, please change the commands accordingly.
 
 # Prerequisites
-•	Python 3.8
-•	vtk == 9.1.0
+1. Python 3.8
+2. vtk == 9.1.0
 # Setup Python environment and install vtk
 •	setup python virtual environment: python3.8 -m venv env
 •	activate virtual environment: env/Scripts/activate
