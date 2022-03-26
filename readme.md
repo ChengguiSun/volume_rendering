@@ -17,5 +17,6 @@ All commands list here are sample commands. And this is based on Windows. To run
 *	run a specific script python src/filename.py
 
 # About files and folders
-* src folder has python scripts;
+* python folder has python scripts;
+* matlab folder has matlab scripts for image pre-processing;
 * output has sample results of volume rendering.
