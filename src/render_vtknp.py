@@ -1,4 +1,6 @@
-"""Render np.array volume with vtk and numpy."""
+"""
+Render volume with vtk and numpy from an array.
+"""
 
 import numpy as np
 import scipy.io
@@ -16,7 +18,7 @@ dataImporter.CopyImportVoidPointer(data_string, len(data_string)) # Import data 
 dataImporter.SetDataScalarTypeToUnsignedChar() # data set to unsigned char (uint8)
 dataImporter.SetNumberOfScalarComponents(1) 
 dataImporter.SetDataExtent(0, 479, 0, 639, 0, 1199) # 3d dimension
-# dataImporter.SetDataSpacing(3.2,3.2,1.5)
+# dataImporter.SetDataSpacing(1, 1, 1)
 dataImporter.SetWholeExtent(0, 479, 0, 639, 0, 1199)
 # dataImporter.update()
 
@@ -67,3 +69,5 @@ renderInteractor.Initialize()
 
 renderWin.Render()
 renderInteractor.Start()
+
+print(len(data_string))
