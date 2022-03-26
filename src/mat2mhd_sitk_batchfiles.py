@@ -17,15 +17,21 @@ def mat2mhd(filePaths):
         old_name=os.path.basename(path) # extract file name
         name = old_name.split('.')[0] # split name and file extension
         print(name) # print names and track the process
-        save_path = "./output" # define save folder path
+        save_path = "../output" # define save folder path
         new_name = save_path + "/" + '{}.{}'.format(name, 'mhd') # new file name
         # new_name = save_path + "/" + '{}.{}'.format(name, 'mha')
         mat = scipy.io.loadmat(path) 
         # arr = mat['AAA'][0,0][1] # key 'AAA' shall be updated with keys of various .mat files.
         arr = mat['Vertebra'][0,0][1]
+        print(len(arr))
         # write and save .mhd file 
         img = sitk.GetImageFromArray(arr)
         sitk.WriteImage(img, new_name)
+
+def single(file_path):
+    file_paths = []
+    file_paths.append(file_path)
+    mat2mhd(file_paths)
 
 # Define a main function to build filepaths from a folder path
 def main():
@@ -40,4 +46,5 @@ def main():
 
 # Driver Code
 if __name__ == '__main__':
-   main()
+   #main()
+   single("F:/MM804/dataset/Code and Data for Students/Set 1/Neutral1/T3-NA.mat")
