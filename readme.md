@@ -1,7 +1,7 @@
 This file is created for MM804 project. Please create your branch to write codes for this project.
 
 # Accredit
-The code is written based on XXX.
+Some of the scripts are written based on course lectures.
 
 # Installation
 All commands list here are sample commands. And this is based on Windows. To run the code on other OS, please change the commands accordingly.
