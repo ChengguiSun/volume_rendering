@@ -14,7 +14,7 @@ All commands listed here are sample commands and written based on Windows OS. To
 *	setup python virtual environment: python3.8 -m venv env
 *	activate virtual environment: env/Scripts/activate
 *	install vtk: pip install -r requirements.txt
-*	run a specific script python python/filename.py
+*	run a specific script with this command: python python/filename.py
 
 # About folders and files
 * **python** folder has the following python scripts;
