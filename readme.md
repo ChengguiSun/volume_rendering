@@ -17,14 +17,14 @@ All commands listed here are sample commands and written based on Windows OS. To
 *	run a specific script python src/filename.py
 
 # About files and folders
-* python folder has the following python scripts;
-  * mat2mhd_sitk_singlefile.py: convert a single .mat file to .mhd file using SimpleITK (recommended);
-  * mat2mhd_sitk_batchfiles.py: convert .mat files in one folder to .mhd files using SimpeITK (recommended);
-  * mat2mhd_vtk.py: convert a single .mat file to .mhd file using VTK (need to be improved and not recommended);
-  * volume_rendering.py: perform volume rendering from .mhd file/files using VTK. The opacity and color values need to be set with the help of 3D Slicer(recommended);
-  * render_vista.py: perform volume rendering from .mat file/files using pyvista;
-  * render_vtknp.py: perform volume rendering from .mat file/files using numpy and VTK;
-  * matscanner.py: read keys of from .mat file/files.
+* **python** folder has the following python scripts;
+  * *mat2mhd_sitk_singlefile.py:* convert a single .mat file to .mhd file using SimpleITK **(recommended)**;
+  * *mat2mhd_sitk_batchfiles.py:* convert .mat files in one folder to .mhd files using SimpeITK **(recommended)**;
+  * *mat2mhd_vtk.py:* convert a single .mat file to .mhd file using VTK (need to be improved and not recommended);
+  * *volume_rendering.py:* perform volume rendering from .mhd file/files using VTK. The opacity and color values need to be set with the help of 3D Slicer **(recommended)**;
+  * *render_vista.py:* perform volume rendering from .mat file/files using pyvista (need to be improved and not recommended);
+  * *render_vtknp.py:* perform volume rendering from .mat file/files using numpy and VTK (need to be improved and not recommended);
+  * *matscanner.py:* read keys of from .mat file/files.
 
 * matlab folder has matlab scripts for image pre-processing;
 * output has sample results of volume rendering.
