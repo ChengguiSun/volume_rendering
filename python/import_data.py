@@ -21,8 +21,10 @@ def import_data(filename):
     # Mo-Cap 5-averaging and frameshift mocap
     Frames = Mocap.shape[0]
 
+    #print(Frames)
+
     for i in range(2,Frames-3):
-        Mocap_ave[i,2:8] = np.mean(Mocap[i+MCShift-2:i+MCShift+3,2:8])
+        Mocap_ave[i,2:8] = np.mean(Mocap[i+MCShift-2:i+MCShift+3,2:8],axis=0)
 
     Mocap[2:Frames-3,2:8]=Mocap_ave[2:Frames-3,2:8]
 
@@ -35,9 +37,13 @@ def import_data(filename):
             else:
                 new_mocap = np.append(new_mocap, [Mocap[i,:]],axis=0)
 
+    #print(new_mocap.shape)
+
     Mocap = new_mocap
 
     Frames = Mocap.shape[0]
+
+    #print(Frames)
 
     Mocap[:,2:9] = np.around(Mocap[:,2:9],decimals=1)
     Mocap[:,2:5]=Mocap[:,2:5]*10
@@ -49,15 +55,24 @@ def import_data(filename):
 
     US = mat_contents["Vertebra"]["US"][0][0]
 
+    #print(US.shape)
 
     for k in range(USShift,Frames):
         US =mat_contents["Vertebra"]["US"][0][0][:,:,k]
+        #print(np.amin(US))
         US = US[60:417,90:552]
+        #print(np.amax(US))
+        #print(np.amax(US))
+        #print(np.amin(US))
         new_US = np.asarray(Image.fromarray(US.astype('uint8')).resize((195,150)))
+        #print(np.amax(new_US))
+        #print(np.amin(new_US))
         US_Stack[:,:,k-USShift] = new_US
 
 
     Mocap = Mocap[:-USShift,]
+
+    #print(Mocap.shape)
 
     return Mocap,US_Stack
 
@@ -68,5 +83,5 @@ if __name__ == "__main__":
 
     print(Mocap.shape)
     print(US_Stack.shape)
-    print(np.amax(US_Stack[:,:,1]))
-    print(np.amin(US_Stack[:,:,1]))
+    #print(np.amax(US_Stack[:,:,1]))
+    #print(np.amin(US_Stack[:,:,1]))
