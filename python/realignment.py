@@ -22,7 +22,7 @@ def Vol_Sizing(list):
 
     return maxmin,dim_min,dim_max,list
 
-def realginment(US,MC):
+def realignment(US,MC):
     frames = MC.shape[0]
     MC[:,2:5] = MC[:,2:5]/2
     pixel_value = []
