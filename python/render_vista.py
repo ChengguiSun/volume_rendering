@@ -8,19 +8,25 @@ from scipy.ndimage import gaussian_filter
 import SimpleITK as sitk
 import pyvista as pv
 import numpy as np
+from import_data import import_data
+from filters import filters
+from realignment import realignment
 
 
 # import data from mat file
-mat = scipy.io.loadmat('./Data/PhantomSpine/Group1/2019-04-18-IRExperiment2/1-Neutral/T5NA.mat')
-arr = mat['AAA'][0,0][1]
-# arr_denoise = np.zeros_like(arr)
-# for i in range(arr.shape[2]):
-#     arr_denoise[:,:,i] = gaussian_filter(arr[:,:,i], sigma=1)
+Mocap, US_Stack = import_data('./Data/Code_and_Data_for_Students/Set1/Neutral1/T10-NA.mat')
+filter_tog = {"M":0,"C":1,"H":0,"Q":0,"V":1,"G":1}
+filter_val = {"M":[1,1],"C":[0.6,0.8,0,1],"H":[1],"Q":[5,0.6],"G":[3]}
+
+for i in range(Mocap.shape[0]):
+    US_Stack[:,:,i] = filters(US_Stack[:,:,i],filter_tog,filter_val)
+    
+US_Stack = realignment(US_Stack,Mocap)
 
 # print(mat)
-print(arr.shape)
-print(np.amax(arr))
+print(US_Stack.shape)
+print(np.amax(US_Stack))
 
 # volume rendering with pyvista
-data = pv.wrap(arr)
+data = pv.wrap(US_Stack)
 data.plot(volume=True)
