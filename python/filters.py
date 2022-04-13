@@ -45,7 +45,7 @@ def filters(US,tog,val):
 
     if tog["Q"] == 1:
         #otsu thresholding
-        US,thresh = cv2.threshold(US,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+        thresh,US = cv2.threshold(US.astype(np.uint16),0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
 
     if tog["V"] == 1:
         y_size = US.shape[1]

@@ -1,6 +1,6 @@
 import vtk
 
-fileName = "./output/T3-NA.mhd" # path to the MHA file
+fileName = "../output/T10-NA.mhd" # path to the MHA file
 reader = vtk.vtkMetaImageReader()
 reader.SetFileName(fileName)
 reader.Update()
