@@ -29,4 +29,4 @@ print(np.amax(US_Stack))
 
 # volume rendering with pyvista
 data = pv.wrap(US_Stack)
-data.plot(volume=True)
+data.plot(volume=True, cmap=["silver"])
