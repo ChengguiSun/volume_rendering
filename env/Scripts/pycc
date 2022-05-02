@@ -1,3 +1,0 @@
-#!g:\mm_program\projects\804git\804_volumerendering\env\scripts\python.exe
-from numba.pycc import main
-main()
