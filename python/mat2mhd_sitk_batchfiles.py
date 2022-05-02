@@ -9,6 +9,7 @@ import os
 from import_data import import_data
 from filters import filters
 from realignment import realignment
+from import_and_preprocess import import_preprocess
 
 # Define a function to convert .mat files to .mhd files
 def mat2mhd(filePaths):
@@ -24,20 +25,8 @@ def mat2mhd(filePaths):
         new_name = save_path + "/" + '{}.{}'.format(name, 'mhd') # new file name
         # new_name = save_path + "/" + '{}.{}'.format(name, 'mha')
 
-        #import data and do the filtering
-        Mocap, US_Stack = import_data(path)
-        filter_tog = {"M":0,"C":1,"H":0,"Q":0,"V":1,"G":1}
-        filter_val = {"M":[1,1],"C":[0.6,0.8,0,1],"H":[1],"Q":[5,0.6],"G":[3]}
-
-        for j in range(Mocap.shape[0]):
-            US_Stack[:,:,j] = filters(US_Stack[:,:,i],filter_tog,filter_val)
-    
-        US_Stack = realignment(US_Stack,Mocap)
-
-        # load data directly from preprocessed .mat file.
-        # mat = scipy.io.loadmat(path) 
-        # arr = mat['AAA'][0,0][1] # key 'AAA' shall be updated with keys of various .mat files.
-        # arr = mat['Vertebra'][0,0][1]
+        # preprocess data
+        US_Stack = import_preprocess(path)
 
         # write and save .mhd file 
         img = sitk.GetImageFromArray(US_Stack)

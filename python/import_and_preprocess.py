@@ -42,5 +42,5 @@ def import_preprocess(filename):
     return US
 
 if __name__ == "__main__":
-    filename = "F:/MM804/dataset/Code and Data for Students/Set 1/Neutral1/T3-NA.mat"
+    filename = './Data/Code_and_Data_for_Students/Set1/Neutral1/T3-NA.mat'
     import_preprocess(filename)
