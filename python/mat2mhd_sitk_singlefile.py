@@ -42,6 +42,7 @@ def mat2mhd(Path):
     # write and save .mhd file 
     img = sitk.GetImageFromArray(US_Stack)
     sitk.WriteImage(img, new_name)
+    return new_name
 
 
 def main():
