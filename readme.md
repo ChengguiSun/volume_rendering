@@ -15,6 +15,10 @@ All commands listed here are sample commands and written based on Windows OS. To
 *	activate virtual environment: env/Scripts/activate
 *	install vtk: pip install -r requirements.txt
 *	run a specific script with this command: python python/filename.py
+* run stand_alone.py followed by .mat file path to directly get the result 
+```
+python stand_alone.py -p "your_mat_path"
+```
 
 # About folders and files
 * **python** folder has the following python scripts;
