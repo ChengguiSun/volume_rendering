@@ -1,4 +1,4 @@
-This repo is created for MM804 project - Reconstruction and Visualization of 3D
+This repo is created for MM project - Reconstruction and Visualization of 3D
 Anatomical Structures Using a Sequence of 2D Ultrasound Images. Please create 
 your branch to write codes for this project.
 
